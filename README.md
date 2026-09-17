@@ -1,45 +1,45 @@
-# Mail-Ablage
+# Mail Archive
 
-Eine geplante Windows-Anwendung, die ausgewählte Outlook-E-Mails
-und ihre Anhänge in gewöhnlichen Ordnern ablegt.
+A planned Windows application that saves selected Outlook emails
+and their attachments in regular folders.
 
 ## Problem
 
-Bisher werden E-Mails aus Outlook auf den Desktop gezogen.
-Um Nachricht und Anhänge einzeln zugänglich zu machen, müssen
-die Inhalte anschließend von Hand gespeichert werden.
+Currently, emails are dragged from Outlook onto the desktop.
+The message and attachments then have to be saved manually
+to make them accessible as separate files.
 
-Die Anwendung soll diese manuelle Aufbereitung übernehmen.
+The application will automate this manual process.
 
-## Geplanter Ablauf
+## Planned workflow
 
-1. Eine oder mehrere E-Mails aus Outlook ins Fenster ziehen.
-2. Optional für jede E-Mail einen eigenen Namen eingeben.
-3. Auf „E-Mails speichern“ klicken.
-4. Das Ergebnis für jede E-Mail im Fenster sehen.
+1. Drag one or more emails from Outlook into the window.
+2. Optionally enter a custom name for each email.
+3. Click "Save emails".
+4. View the result for each email in the window.
 
-## Ablage
+## Storage
 
-Ziel ist der Ordner „Mail-Ablage“ auf dem Desktop.
+The destination is a folder named "Mail Archive" on the desktop.
 
-Jede E-Mail bekommt einen Unterordner mit ihrem E-Mail-Datum
-und einer Bezeichnung. Verwendet wird der eigene Name,
-ansonsten der Betreff, ansonsten die Absenderadresse.
+Each email gets a subfolder named using its email date and a label.
+The label is the custom name if provided, otherwise the subject,
+or the sender's email address if the subject is empty.
 
-Gespeichert werden:
+Each folder contains:
 
-- Die Nachricht als HTML mit Absender, Empfänger, Datum und Betreff.
-- Die unveränderte Original-E-Mail.
-- Alle Dateianhänge im Unterordner „Anhänge“.
+- The message as HTML, including sender, recipients, date, and subject.
+- The unchanged original email file received from Outlook.
+- All file attachments in an "Attachments" subfolder.
 
-Vorhandene Dateien werden nicht überschrieben.
-Bei gleichen Ordnernamen werden Zusätze wie „(2)“ angehängt.
-Fehler werden pro E-Mail angezeigt.
+Existing files are never overwritten.
+If a folder name already exists, a suffix such as "(2)" is added.
+Errors are reported separately for each email.
 
-## Aktueller Stand
+## Current status
 
-Anforderungen und grundlegender Ablauf sind festgelegt.
-Die Anwendung ist noch nicht implementiert.
+The requirements and basic workflow have been defined.
+The application has not been implemented yet.
 
-Der erste technische Versuch prüft die direkte Übergabe
-einer E-Mail aus Outlook unter Windows an das Programm.
+The first technical experiment will test whether the application
+can receive an email dragged directly from Outlook on Windows.
