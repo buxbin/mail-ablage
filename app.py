@@ -8,18 +8,25 @@ class EmailDropWindow(QWidget):
         super().__init__()
         self.setAcceptDrops(True)
 
-    def dragEnterEvent(self, event):
-        mime_data = event.mimeData()
-        formats = mime_data.formats()
-        print("Available drag formats:", formats)
+        def dragEnterEvent(self, event):
+            mime_data = event.mimeData()
 
-        urls = mime_data.urls()
+            print("Available drag formats:", mime_data.formats())
+            print("Has URLs:", mime_data.hasUrls())
 
-        for url in urls:
-            print("Dragged URL:", url.toString())
+            print("Reading URLs...")
+            urls = mime_data.urls()
+            print("URL count:", len(urls))
 
-        if mime_data.hasUrls():
-            event.acceptProposedAction()
+            for url in urls:
+                print("Dragged URL:", url.toString())
+
+            if mime_data.hasUrls():
+                event.acceptProposedAction()
+                print("Drag entry accepted.")
+            else:
+                event.ignore()
+                print("Drag entry rejected.")
 
     def dropEvent(self, event):
         mime_data = event.mimeData()
