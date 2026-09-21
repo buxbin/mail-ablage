@@ -1,0 +1,1 @@
+Drop formats: ['application/x-qt-windows-mime;value="DragContext"', 'application/x-qt-windows-mime;value="DragImageBits"', 'application/x-qt-windows-mime;value="chromium/x-renderer-taint"', 'text/uri-list', 'application/x-qt-windows-mime;value="Chromium Web Custom MIME Data Format"']
