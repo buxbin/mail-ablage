@@ -28,13 +28,21 @@ class EmailDropWindow(QWidget):
             event.ignore()
             print("Drag entry rejected.")
 
-    def dropEvent(self, event):
-        mime_data = event.mimeData()
+        def dropEvent(self, event):
+            print("Drop event received.")
 
-        for url in mime_data.urls():
-            if url.isLocalFile():
-                file_path = url.toLocalFile()
-                print("Dropped local path:", file_path)
+            mime_data = event.mimeData()
+            print("Drop formats:", mime_data.formats())
+
+            urls = mime_data.urls()
+            print("Drop URL count:", len(urls))
+
+            for url in urls:
+                print("Dropped URL:", url.toString())
+
+                if url.isLocalFile():
+                    file_path = url.toLocalFile()
+                    print("Dropped local path:", file_path)
 
 def main():
     app = QApplication(sys.argv)
